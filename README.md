@@ -9,8 +9,8 @@ In order to use this script you'll need [Madden Xtreme DB Editor](https://www.fo
 
 If you're not using the *Folder* memcard type in PCSX2 you may also need:
 
-[PS2 Save Builder](https://www.ps2savetools.com/download/ps2-save-builder/)
-[mymc](http://www.csclub.uwaterloo.ca:11068/mymc/)
+* [PS2 Save Builder](https://www.ps2savetools.com/download/ps2-save-builder/)
+* [mymc](http://www.csclub.uwaterloo.ca:11068/mymc/)
 
 And until I get this into a self-contained binary, you'll need [python](https://www.python.org/downloads/) to run this.
 
@@ -50,10 +50,12 @@ C-USA sucks.  No really, they take the place of the Sun Belt in vanilla as the o
 
 ## Future Considerations
 
-It might be nice to have the script prompt the user for conference associations.  For example, the Big 12 and the SEC might both be tied to Sun Belt, ACC to the AAC, B1G to C-USA, and Pac-12 to Mt West.
+It might be nice to have the script prompt the user for conference associations.  For example, the Big 12 and the SEC might both be tied to Sun Belt, ACC to the AAC, B1G to C-USA, and Pac-12 to Mt West.  In lieu of this, being able to dynamically choose a landing spot based on team geolocation rather than conference tie in might make more sense.
 
 Either adjusting the C-USA prestige to align with the other group conferences or dropping another one down and doing two tiers of relegation would help balance the 
 
 Exporting the CSVs and asking for 5 paths each run is tedious and error prone.  Being able to directly interact with the DB file, removing the dependence on the DB editor, would improve the overall experience.
 
 Coaching carousel mod tie-in, automatically fire coaches on relegated teams.  Not sure how this is wired in yet, might not be possible.
+
+This script is created and tested for [NCAA Next](https://www.ncaanext.com/)  Additional work may allow for this to work with vanilla and/or other versions of NCAA football
