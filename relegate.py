@@ -39,6 +39,7 @@ def getFilePaths():
     return result
 
 def loadInputs(csvPaths):
+    global MAX_SWOR
     teamDict = readCSV(csvPaths['TEAM'])
     confDict = readCSV(csvPaths['CONF'])
     diviDict = readCSV(csvPaths['DIVI'])
@@ -62,7 +63,7 @@ def loadInputs(csvPaths):
     cur.executemany(f"INSERT INTO TSWP VALUES(:{', :'.join(tswpDict['headers'])})", tswpDict['data'])
 
     con.commit()
-    MAX_SWOR = cur.execute("SELECT MAX(swor) FROM TSWP;").fetchone()[0]
+    MAX_SWOR = int(cur.execute("SELECT MAX(CAST(swor AS INTEGER)) FROM TSWP;").fetchone()[0])
     con.close()
 
 def findRelegates(numRelegate):

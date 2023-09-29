@@ -28,7 +28,7 @@ First thing you'll need to do is export some tables to CSV from your dynasty db 
 3. TEAM
 4. TSWP
 
-**Note: You'll only need to extract these tables once for your dynasty as they shouldn't change year to year.  The other three are required every year.
+**Note: You'll only need to extract these tables once for your dynasty as they shouldn't change year to year.  The other two are required every year.
 
 Next, you'll want to make a note of where you saved those CSV files, and by note I mean open up something like Notepad and put the [absolute path](https://en.wikipedia.org/wiki/Path_(computing)#Absolute_and_relative_paths) to each CSV file.  If someone wants to power through [tkinter](https://docs.python.org/3/library/tkinter.html) and make a GUI this step may become less complicated, but damnit Jim I'm an SRE not a UX developer so you'll need to paste the paths to the files when prompted without the help of a file dialog.
 
@@ -53,7 +53,7 @@ It might be nice to have the script prompt the user for conference associations.
 
 Either adjusting the C-USA prestige to align with the other group conferences or dropping another one down and doing two tiers of relegation would balance the conference prestiges.
 
-Exporting the CSVs and asking for 5 paths each run is tedious and error prone.  Being able to directly interact with the DB file, removing the dependence on the DB editor, would improve the overall experience.
+Exporting the CSVs and asking for 4 paths each run is tedious and error prone.  Being able to directly interact with the DB file, removing the dependence on the DB editor, would improve the overall experience.
 
 Coaching carousel mod tie-in, automatically fire coaches on relegated teams.  Not sure how this is wired in yet, might not be possible.
 
