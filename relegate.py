@@ -73,7 +73,7 @@ def findRelegates(numRelegate):
     powerConfIdRes = cur.execute(f"SELECT cgid FROM conf WHERE cprs='3' AND NOT cnam='{IND_CONF_NAME}';").fetchall()
     powerConfIds = {}
     for idTup in powerConfIdRes:
-        powerConfIds[idTup[0]] = cur.execute(f"SELECT tgid, cgid, dgid, tscs_ FROM team WHERE cgid='{idTup[0]}' ORDER BY tscs_ DESC LIMIT {numRelegate};").fetchall()
+        powerConfIds[idTup[0]] = cur.execute(f"SELECT tgid, cgid, dgid, tscs_ FROM team WHERE cgid='{idTup[0]}' ORDER BY CAST(tscs_ AS INTEGER) DESC LIMIT {numRelegate};").fetchall()
     con.close()
     return powerConfIds
 
@@ -88,7 +88,7 @@ def findPromotions(numPromote):
         groupConfIds.append(id[0])
     joinStr = "', '"
     groupConfIdString = f"'{joinStr.join(groupConfIds)}'"
-    teamRes = cur.execute(f"SELECT tgid, cgid, dgid, tscs_ FROM team WHERE cgid IN ({groupConfIdString}) ORDER BY tscw_ DESC LIMIT {numPromote};").fetchall()
+    teamRes = cur.execute(f"SELECT tgid, cgid, dgid, tscs_ FROM team WHERE cgid IN ({groupConfIdString}) ORDER BY CAST(tscw_ AS INTEGER) DESC LIMIT {numPromote};").fetchall()
 
     con.close()
     return teamRes

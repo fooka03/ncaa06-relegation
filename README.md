@@ -19,7 +19,7 @@ There's a couple of steps in the process to perform the promotion/relegation dan
 
 **Warning** This, like any other save modification, can and will brick your save!  Be sure to _backup_ your save before starting this process.  You have been warned...
 
-This process should be done with a save that's been advanced to the off-season (post-bowls/champ) but before Budgets have been set.  In theory, this can be done anytime before advancing to the next season, but conference prestige does affect recruiting so it makes the most sense to do as early as possible in the off-season.
+This process should be done with a save that's completed all bowls, but has NOT advanced to the off-season.  In theory, this can be done anytime before advancing to the next season, but conference prestige does affect recruiting so it makes the most sense to do as early as possible in the off-season.  Additionally, MXDBE does not play nicely with the way the offseason save file is structured and can cause corruption.
 
 First thing you'll need to do is export some tables to CSV from your dynasty db contained in your save.  You'll do this by opening the db in *Madden Xtreme DB Editor*. (If you need help with getting to the DB file there are plenty of resources available, but [this](https://forums.operationsports.com/forums/showpost.php?p=2047976483&postcount=2) should get you there if you're not using the *folder* memcard type.  Folder users can navigate into the memcard folder and open the `BALSUSXXXXX` file directly)
 
@@ -35,7 +35,7 @@ Next, you'll want to make a note of where you saved those CSV files, and by note
 
 Now you can finally fire up the script by either double clicking the `relegate.bat` on windows or running `python relegate.py`.  It will prompt you for the paths to the aforementioned CSV files and ask how many teams per power conference you'd like to relegate.  Once you've done that, the script will automatically update the `TEAM` and `TSWP` csv files based on the season's records for the teams and display the changes that were made.
 
-Finally, you'll need to import `TEAM` and `TSWP` into your dynasty via Madden Xtreme DB Editor (and PS2 Save Builder/mymc if you need it).  Once your import is done you should be able to fire up the game and validate that the conference members have been updated.
+Finally, you'll need to import `TSWP` into your dynasty via Madden Xtreme DB Editor and use the `Addendum` function for the `TEAM` table.  The new CSV files will end with `.new.csv` so make sure you're importing the right ones (and PS2 Save Builder/mymc if you need it).  Once your import is done you should be able to fire up the game and validate that the conference members have been updated (in Sports Illustrated -> Final Standings).
 
 ## Limitations
 The biggest limitation to mention is that the `TSWP` table has a maximum of *446* entries.  Unfortunately this means there's a shelf life for this script.  Once you hit that limit, you won't be able to perform any more team swaps.  At most, you'll be able to use this script for *89* seasons assuming 1 team relegated per power conference.  This drops to *44* if you decide on 2 teams relegated per conference, *29* for 3 and so on.  Of course you can get creative about how you can work around this (only relegate if there's a winless power 5 team or undefeated group of 4, relegate every other season, etc).  Note, if you swap teams via other means (Pre-Dynasty team swaps for example) this will count against that 446 max and reduce the amount of seasons you can use this script for.
