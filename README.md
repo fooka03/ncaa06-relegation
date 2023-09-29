@@ -25,9 +25,8 @@ First thing you'll need to do is export some tables to CSV from your dynasty db 
 
 1. CONF**
 2. DIVI**
-3. COCH
-4. TEAM
-5. TSWP
+3. TEAM
+4. TSWP
 
 **Note: You'll only need to extract these tables once for your dynasty as they shouldn't change year to year.  The other three are required every year.
 
